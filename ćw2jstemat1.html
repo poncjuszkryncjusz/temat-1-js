@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="skrypt.js"></script>
+    <title>formatowanie</title>
+
+
+</head>
+
+<body>
+
+    <div id="out"></div>
+    <div id="formatowane"></div>
+    <script>
+        let tekst = prompt("podaj imie")
+
+
+        let nowe = confirm("Czy chcesz założyć nowe konto " + (tekst))
+        if (nowe) {
+
+            document.getElementById("formatowane").innerHTML = 'Witaj, <h1>' + tekst + "</h1>";
+
+        } else {
+            document.getElementById("out").textContent = "Witaj!" + tekst;
+
+        }
+    </script>
+</body>
+
+</html>
