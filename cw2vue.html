@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="onClick">Kliknij mnie</button>
+
+        <template v-if="confirmValue">
+            <h2>Hello, {{name}}</h2>
+            <hr>
+          </template>
+        <template v-else>
+            <p>brak</p>
+           </template>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "",
+                confirmValue: true
+            },
+            methods: {
+                onClick() {
+                    this.name = prompt("podaj imie");
+                    this.confirmValue = confirm("Czy chcesz założyć nowe konto " + (this.name));
+                    console.log(this.confirmValue)
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
